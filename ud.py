@@ -22,4 +22,6 @@ def ud_search(bot, trigger):
     definition = data['list'][0]['definition']
     thumbsup = data['list'][0]['thumbs_up']
     thumbsdown = data['list'][0]['thumbs_down']
-    bot.reply('Definition: %s :: Upvotes: %s Downvotes: %s') % (definition,thumbsup,thumbsdown)
+    udoutput = "Definition: %s :: Upvotes: %s Downvotes: %s" % (definition,thumbsup,thumbsdown)
+    bot.reply(udoutput)
+
