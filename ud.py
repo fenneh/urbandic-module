@@ -13,15 +13,20 @@ import urllib
 import json
 
 @commands('ud')
-@example('.ud pussyole')
+@example('.ud getme')
 def ud_search(bot, trigger):
     query = trigger.group(2)
     url = 'http://api.urbandictionary.com/v0/define?term=%s' %(query)
     response = urllib.urlopen(url)
     data = json.loads(response.read())
-    definition = data['list'][0]['definition']
-    thumbsup = data['list'][0]['thumbs_up']
-    thumbsdown = data['list'][0]['thumbs_down']
-    udoutput = "Definition: %s :: Upvotes: %s Downvotes: %s" % (definition,thumbsup,thumbsdown)
-    bot.reply(udoutput)
-
+    try:
+      definition = data['list'][0]['definition']
+    except KeyError:
+      bot.say('Something went wrong brah')
+    except IndexError:
+      bot.say('No results, do you even spell brah?')
+    else:
+      thumbsup = data['list'][0]['thumbs_up']
+      thumbsdown = data['list'][0]['thumbs_down']
+      udoutput = "Definition: %s :: Up: %s Down: %s" % (definition,thumbsup,thumbsdown)
+      bot.reply(udoutput)
