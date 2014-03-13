@@ -25,6 +25,8 @@ def ud_search(bot, trigger):
       bot.say('Something went wrong brah')
     except IndexError:
       bot.say('No results, do you even spell brah?')
+    except UnicodeError:
+      bot.say('(╯°□°）╯︵ ┻━┻) ASCII ONLY!!!!')
     else:
       thumbsup = data['list'][0]['thumbs_up']
       thumbsdown = data['list'][0]['thumbs_down']
