@@ -28,5 +28,5 @@ def ud_search(bot, trigger):
     else:
       thumbsup = data['list'][0]['thumbs_up']
       thumbsdown = data['list'][0]['thumbs_down']
-      udoutput = "Definition: %s >> Up %s Down %s" % (definition,thumbsup,thumbsdown)
-      bot.say(udoutput)
+      udoutput = "Definition; %s >> Up %s Down %s" % (definition,thumbsup,thumbsdown)
+      bot.reply(udoutput)
