@@ -17,11 +17,12 @@ import sys
 @example('.ud getme')
 def ud_search(bot, trigger):
     query = trigger.group(2)
-    if "spam" in query:
+    querym = query.replace(" ", "")
+    if "spam" in querym:
       bot.reply('Negative ghostrider')
       exit(0)
     else:
-      url = 'http://api.urbandictionary.com/v0/define?term=%s' %(query)
+      url = 'http://api.urbandictionary.com/v0/define?term=%s' %(querym)
     try:
       response = urllib.urlopen(url)
     except UnicodeError:
