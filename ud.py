@@ -39,4 +39,9 @@ def ud_search(bot, trigger):
       thumbsup = data['list'][0]['thumbs_up']
       thumbsdown = data['list'][0]['thumbs_down']
       udoutput = "Definition; %s >> Up %s Down %s" % (definition,thumbsup,thumbsdown)
-      bot.reply(udoutput)
+      if not "spam spam" in udpoutput:
+          bot.reply(udoutput)
+      else:
+          definition = "Spiced ham"
+          udoutput = "Definition; %s >> Up %s Down %s" % (definition,thumbsup,thumbsdown)
+          bot.reply(udoutput)
