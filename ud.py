@@ -42,6 +42,4 @@ def ud_search(bot, trigger):
       if not "spam spam" in udpoutput:
           bot.reply(udoutput)
       else:
-          definition = "Spiced ham"
-          udoutput = "Definition; %s >> Up %s Down %s" % (definition,thumbsup,thumbsdown)
-          bot.reply(udoutput)
+          bot.reply('Spiced ham')
