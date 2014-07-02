@@ -17,7 +17,7 @@ import sys
 @example('.ud getme')
 def ud_search(bot, trigger):
     query = trigger.group(2)
-    if query.startswith("spam"):
+    if "spam" in query:
       bot.reply('Negative ghostrider')
       exit(0)
     else:
